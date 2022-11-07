@@ -3,6 +3,7 @@ package com.trilogyed.gamestoreinvoicing.respository;
 //import com.trilogyed.gamestore.model.Tax;
 import com.trilogyed.gamestoreinvoicing.model.Tax;
 import com.trilogyed.gamestoreinvoicing.repository.TaxRepository;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.*;
@@ -20,6 +24,8 @@ public class TaxRepositoryTest {
 
     @Autowired
     TaxRepository taxRepository;
+
+    List<Tax> createList = new ArrayList<>();
 
     Tax[] states = new Tax[]{
         new Tax("AK",new BigDecimal("0.06")),
@@ -73,6 +79,12 @@ public class TaxRepositoryTest {
         new Tax("WV",new BigDecimal("0.05")),
         new Tax("WY",new BigDecimal("0.04"))
     };
+
+    @Before
+    public void setUp(){
+        if (taxRepository.count()<=0)
+            for(Tax state:states){taxRepository.save(state);}//List<Tax> createList = new ArrayList<>(Arrays.asList());
+    }
 
     @Test
     public void getTaxRateObject() {
