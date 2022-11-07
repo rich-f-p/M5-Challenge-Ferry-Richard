@@ -46,13 +46,6 @@ public class InvoiceServiceLayerTest {
 
     @Test
     public void shouldCreateFindInvoice() {
-        TShirtViewModel tShirt = new TShirtViewModel();
-        tShirt.setSize("Medium");
-        tShirt.setColor("Blue");
-        tShirt.setDescription("V-Neck");
-        tShirt.setPrice(new BigDecimal("19.99"));
-        tShirt.setQuantity(5);
-        //tShirt = service.createTShirt(tShirt);
 
         InvoiceViewModel invoiceViewModel = new InvoiceViewModel();
         invoiceViewModel.setName("John Jake");
@@ -134,13 +127,6 @@ public class InvoiceServiceLayerTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldFailCreateFindInvoiceWithBadState() {
-        TShirtViewModel tShirt = new TShirtViewModel();
-        tShirt.setId(99);
-        tShirt.setSize("Small");
-        tShirt.setColor("Red");
-        tShirt.setDescription("sleeveless");
-        tShirt.setPrice(new BigDecimal("400"));
-        tShirt.setQuantity(30);
 
         InvoiceViewModel invoiceViewModel = new InvoiceViewModel();
         invoiceViewModel.setName("John Jake");
@@ -161,13 +147,7 @@ public class InvoiceServiceLayerTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldFailCreateFindInvoiceWithBadItemType() {
-        TShirtViewModel tShirt = new TShirtViewModel();
-        tShirt.setSize("Medium");
-        tShirt.setColor("Blue");
-        tShirt.setDescription("V-Neck");
-        tShirt.setPrice(new BigDecimal("19.99"));
-        tShirt.setQuantity(5);
-//        tShirt = service.createTShirt(tShirt);
+
 
         InvoiceViewModel invoiceViewModel = new InvoiceViewModel();
         invoiceViewModel.setName("John Jake");
@@ -188,13 +168,7 @@ public class InvoiceServiceLayerTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldFailCreateFindInvoiceWithNoInventory() {
-        TShirtViewModel tShirt = new TShirtViewModel();
-        tShirt.setSize("Medium");
-        tShirt.setColor("Blue");
-        tShirt.setDescription("V-Neck");
-        tShirt.setPrice(new BigDecimal("19.99"));
-        tShirt.setQuantity(5);
-//        tShirt = service.createTShirt(tShirt);
+
 
         InvoiceViewModel invoiceViewModel = new InvoiceViewModel();
         invoiceViewModel.setName("John Jake");
@@ -216,13 +190,7 @@ public class InvoiceServiceLayerTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldFailWhenCreateInvoiceInvalidItem() {
-        TShirtViewModel tShirt = new TShirtViewModel();
-        tShirt.setSize("Medium");
-        tShirt.setColor("Blue");
-        tShirt.setDescription("V-Neck");
-        tShirt.setPrice(new BigDecimal("19.99"));
-        tShirt.setQuantity(5);
-//        tShirt = service.createTShirt(tShirt);
+
 
         InvoiceViewModel invoiceViewModel = new InvoiceViewModel();
         invoiceViewModel.setName("John Jake");
@@ -240,13 +208,7 @@ public class InvoiceServiceLayerTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldFailWhenCreateInvoiceInvalidQuantity() {
-        TShirtViewModel tShirt = new TShirtViewModel();
-        tShirt.setSize("Medium");
-        tShirt.setColor("Blue");
-        tShirt.setDescription("V-Neck");
-        tShirt.setPrice(new BigDecimal("19.99"));
-        tShirt.setQuantity(5);
-//        tShirt = service.createTShirt(tShirt);
+
 
         InvoiceViewModel invoiceViewModel = new InvoiceViewModel();
         invoiceViewModel.setName("John Jake");
@@ -263,13 +225,6 @@ public class InvoiceServiceLayerTest {
 
     @Test(expected = NullPointerException.class)
     public void shouldFailWhenCreateInvoiceInvalidInvoiceMV() {
-        TShirtViewModel tShirt = new TShirtViewModel();
-        tShirt.setSize("Medium");
-        tShirt.setColor("Blue");
-        tShirt.setDescription("V-Neck");
-        tShirt.setPrice(new BigDecimal("19.99"));
-        tShirt.setQuantity(5);
-//        tShirt = service.createTShirt(tShirt);
 
         InvoiceViewModel invoiceViewModel = null;
 
